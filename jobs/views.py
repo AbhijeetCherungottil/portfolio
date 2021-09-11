@@ -8,5 +8,5 @@ def index(request):
     return render(request,'jobs/index.html',{'jobs':jobs})
 def detail(request,job_id):
     jobs_detail=get_object_or_404(Job,pk=job_id)
-
+    print(jobs_detail)
     return render(request,'jobs/details.html',{'jobs':jobs_detail})    

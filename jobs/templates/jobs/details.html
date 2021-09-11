@@ -1,10 +1,4 @@
 
-{% for job in jobs.all %}
-{{job.summary}}
-<br>
-
-{% endfor %}
-
 <!doctype html>
 <html lang="en">
 {%  load static %}
@@ -33,6 +27,19 @@
 
 
     <style>
+      body {
+      box-sizing: border-box;
+      margin-left: 10px;
+      background-color: rgba(0, 0, 0, 0);
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-attachment: scroll;
+      background-image: linear-gradient(to right, rgb(255, 239, 186), rgb(255, 255, 255));
+      background-size: auto;
+      background-origin: padding-box;
+      background-clip: border-box;
+    }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -56,18 +63,14 @@
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
-        {% for job in jobs.all %}
-
-      <img height=200 width=100 src="{% static 'Abhijeet_C.png' %}" class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Jobs</h1>
-        <p class="lead text-muted">{{job.suumary}}</p>
-        <img src="{{job.image.url}}" height="300">
+        <h1 class="fw-light">Experience</h1>
+        <br>
+        <h2 class="lead text-muted">{{jobs.summary}}</h2>
+        <img src="{{jobs.image.url}}" height="300" class="col-lg-6 col-md-8 mx-auto">
         <p>
-            <a href="{%url 'index' %" class="btn btn-primary my-2">Back</a>
+            <a href="{% url 'index' %}" class="btn btn-primary my-2">Back</a>
         </p>
-      
-        {% endfor %}
-    </div>
+          </div>
     </div>
   </section>
 
